@@ -2,14 +2,30 @@ import React from 'react'
 import './index.css';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
+import EventSection from './components/EventSection';
+import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CreateEvent from './pages/CreateEvent';
+
 
 
 const App = () => {
   return (
-    <main className='relative min-h-screen w-screen overflow-x-hidden'>
-      <Hero/>
-      <Navbar/>
-    </main>
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <Navbar/>
+              <EventSection/>
+              <Footer />
+            </>
+          } />
+          <Route path="/create" element={<CreateEvent />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 

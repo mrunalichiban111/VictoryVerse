@@ -22,3 +22,7 @@ nav ul li{
     margin: 5px 20px;
     font-family: 16px;
 }
+
+.btn{
+    cursor: pointer;
+}
